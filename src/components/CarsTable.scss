@@ -1,0 +1,24 @@
+.cars {
+    font-size: 12px;
+    ul {
+        padding: 0 10px 0 20px;
+    }
+    &__brand {
+        text-align: center;
+        td {
+            background-color: #142335;
+            color: #fff;
+            padding: 10px 0;
+        }
+    }
+    &__model {
+        text-align: center;
+        background-color: #e65100;
+        color: #fff;
+    }
+}
+td {
+    background-color: #eaf5ff;
+    color: #000;
+    border: 1px solid #142335;
+}
