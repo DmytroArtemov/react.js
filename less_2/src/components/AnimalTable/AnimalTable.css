@@ -1,0 +1,12 @@
+.tableWithBorder {
+    border: 10px solid;
+}
+
+.tableWithThickBorder {
+    border: 20px solid;
+}
+
+.activeAnimal {
+    color: green;
+    font-weight: bold;
+}

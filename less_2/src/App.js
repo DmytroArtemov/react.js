@@ -1,4 +1,4 @@
-import AnimalTable from "./AnimalTable/AnimalTable";
+import AnimalTable from "./components/AnimalTable/AnimalTable";
 
 function App() {
   return (
