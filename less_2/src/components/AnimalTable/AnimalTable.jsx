@@ -16,13 +16,19 @@ const AnimalTable = () => {
 
     useEffect(() => {
         const id = setInterval(() => {
-            const randomIndex = Math.floor(Math.random() * animals.length);
-            setActiveAnimals(prev => prev.map((active, index) => index === randomIndex ? true : active));
+            const inactiveAnimalsIndices = activeAnimals
+                .map((isActive, index) => (!isActive ? index : null))
+                .filter(index => index !== null);
+
+            if (inactiveAnimalsIndices.length > 0) {
+                const randomIndex = inactiveAnimalsIndices[Math.floor(Math.random() * inactiveAnimalsIndices.length)];
+                setActiveAnimals(prev => prev.map((active, index) => index === randomIndex ? true : active));
+            }
         }, 2000);
         setIntervalId(id);
 
         return () => clearInterval(id);
-    }, []);
+    }, [activeAnimals]);
 
     useEffect(() => {
         const allActive = activeAnimals.every(active => active);
